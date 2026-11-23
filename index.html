@@ -1,0 +1,30 @@
+---
+layout: default
+title: Una web desde cero
+---
+<section class="hero" aria-labelledby="titulo">
+      <div>
+        <h1 id="titulo">Una web<br><em>desde cero.</em></h1>
+        <p>Tres apuntes para estructurar, diseñar y conectar tus primeras páginas con HTML y CSS.</p>
+        <a class="button" href="#entradas">Ver las entradas</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <code><span>&lt;main&gt;</span><br>&nbsp; Tu primera web<br><span>&lt;/main&gt;</span></code>
+      </div>
+    </section>
+<section id="entradas" aria-labelledby="titulo-entradas">
+  <h2 id="titulo-entradas">Entradas</h2>
+  <div class="grid">
+    {% assign posts = site.posts | sort: "order" %}
+    {% for post in posts %}
+    <article class="card">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.alt | escape }}" width="1000" height="600">
+      <div class="card-body">
+        <p class="category">{{ post.topic | escape }}</p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+        <p>{{ post.summary | escape }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

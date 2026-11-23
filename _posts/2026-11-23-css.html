@@ -1,0 +1,18 @@
+---
+layout: "post"
+title: "Una web que se adapta"
+topic: "Diseño"
+order: 2
+summary: "La misma portada puede tener tres columnas en una pantalla amplia y una sola en el móvil."
+alt: "Una consulta CSS cambia la cuadrícula a una columna en pantallas estrechas."
+image: "/imagenes/css.webp"
+permalink: "/css/"
+---
+<p>El diseño de la portada parte de una cuadrícula. En una pantalla amplia, las tres entradas se leen en paralelo. En una pantalla estrecha, las tarjetas se apilan para que el texto conserve espacio y el usuario pueda desplazarse hacia abajo.</p>
+        <p>La hoja de estilos comparte los colores, los márgenes y la tipografía entre todas las páginas. Una consulta de medios cambia la cuadrícula cuando el ancho disponible baja de 760 píxeles.</p>
+        <h2>Ejemplo</h2>
+        <pre tabindex="0"><code>@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>

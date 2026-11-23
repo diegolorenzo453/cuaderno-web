@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tres apuntes prácticos para crear una web con HTML y CSS.">
+  <title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+  <link rel="stylesheet" href="{{ '/estilos.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="top wrap">
+    <a class="brand" href="{{ '/' | relative_url }}"><span aria-hidden="true">&lt;/&gt;</span> Cuaderno web</a>
+    <nav aria-label="Principal">
+      <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Inicio</a>
+      <a href="{{ '/' | relative_url }}#entradas">Entradas</a>
+    </nav>
+  </header>
+  <main id="contenido" class="wrap" tabindex="-1">
+    {{ content }}
+  </main>
+  <footer class="wrap foot">Cuaderno web · Desarrollo de aplicaciones en red</footer>
+</body>
+</html>
